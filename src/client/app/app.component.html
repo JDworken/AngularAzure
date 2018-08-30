@@ -7,6 +7,10 @@
     <span style="margin-left: 30px;">
       <button mat-button style="font-size: large;" [routerLink]="['/profile']">Profile</button>
     </span>
+    <span style="margin-left: 30px;">
+      <button *ngIf="Pwa.promptEvent" mat-button style="font-size:large;" (click)="installPwa()"><mat-icon>save_alt</mat-icon>Install</button>
+
+    </span>
   </mat-toolbar>
 </div>
 

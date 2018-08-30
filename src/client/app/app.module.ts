@@ -6,7 +6,11 @@ import { MatToolbarModule, MatButtonModule, MatIconModule, MatIconRegistry } fro
 import { AppComponent } from './app.component';
 import { ProfileModule } from "./profile/profile.module";
 import { AppRoutingModule } from './app-routing.module';
+import { PwaService } from "./pwa.service";
+
 import { RouteComponent } from "./route.component";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -20,10 +24,12 @@ import { RouteComponent } from "./route.component";
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
-    MatIconRegistry
+    MatIconRegistry,
+    PwaService
   ],
   bootstrap: [AppComponent]
 })
