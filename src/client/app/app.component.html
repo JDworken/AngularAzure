@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12); position: fixed; left:0; right: 0; top: 0;">
   <mat-toolbar color="primary" [style]="{'width':'100%'}">
-    <div style="display:flex; flex-wrap: wrap;">
+    <div class="toolbar-container" style="display:flex; justify-content: space-between">
         <span>
             <button mat-button style="font-size: large;" [routerLink]="['/']"><mat-icon>home</mat-icon> Jason Dworken</button>
           </span>
@@ -10,7 +10,8 @@
           </span>
           <span style="margin-left: 30px;">
             <button *ngIf="Pwa.promptEvent" mat-button style="font-size:large;" (click)="installPwa()"><mat-icon>save_alt</mat-icon>Install</button>
-      
+            <button *ngIf="Pwa.updateEvent" mat-button style="font-size:large;" (click)="updatePwa()"><mat-icon>cached</mat-icon>Update</button>
+            <!-- <button mat-button style="font-size:large;" (click)="installPwa()"><mat-icon>save_alt</mat-icon>Install</button> -->
           </span>
     </div>
     

@@ -16,4 +16,8 @@ export class AppComponent {
   installPwa():void{
     this.Pwa.promptEvent.prompt();
   }
+
+  updatePwa():void{
+    window.location.reload();
+  }
 }
